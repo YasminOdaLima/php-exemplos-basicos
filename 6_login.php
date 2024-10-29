@@ -29,7 +29,7 @@
         // Lê cada linha do arquivo
         while (($linha = fgets($arquivo)) !== false) {
             // Divide a linha pelo delimitador ":"
-            list($usuario_arquivo, $senha_arquivo) = explode(':', trim($linha));
+            list($usuario_arquivo, $senha_arquivo) = explode(';', trim($linha));
 
             // Verifica se o nome e a senha correspondem aos valores no arquivo
             if ($nome == $usuario_arquivo && $senha == $senha_arquivo) {
@@ -43,7 +43,7 @@
 
         // Exibe a mensagem de sucesso ou erro
         if ($login_sucesso) {
-            echo "<p>Login realizado com sucesso! Bem-vindo, $nome!</p>";
+            echo "<p style='color:darkgreen;'Login realizado com sucesso! <br> Bem-vindo, $nome!</p>";
         } else {
             echo "<p style='color: red;'>Usuário ou senha incorretos.</p>";
         }
